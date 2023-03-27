@@ -8,7 +8,7 @@ let num_month_mapper = function () {
 
 let num_month_reducer = function (key, values) {
     // TODO: Implement the reduce function
-    return {"_id":key, "value":Array.sum(values)};
+    return Array.sum(values);
 };
 
 let num_month_finalizer = function (key, reduceVal) {
