@@ -3,7 +3,7 @@
 
 let num_month_mapper = function () {
     // TODO: Implement the map function
-    emit(this.MOB, {"count":1});
+    emit(this.MOB, 1);
 };
 
 let num_month_reducer = function (key, values) {
