@@ -10,9 +10,7 @@ function find_user(city, dbname) {
     // db.users.find(...);
 
     // See test.js for a partial correctness check.
-    res = db.users.find({hometown:{city:city}})
-    print(res)
-    res.forEach((dataEntry) => {
+    db.users.find({"hometown.city": city}).forEach((dataEntry) => {
         results.push(dataEntry.user_id)
     })
 

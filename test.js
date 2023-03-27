@@ -1,4 +1,4 @@
-let dbname = "nandis"; // replace with your uniqname
+let dbname = "kevtan"; // replace with your uniqname
 
 function cleanUp(){
     db.getCollectionNames().forEach((col) => {

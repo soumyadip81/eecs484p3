@@ -11,9 +11,7 @@ function unwind_friends(dbname) {
 
     // TODO: unwind friends
     db.createCollection("flat_users")
-    friendsData = db.users.aggregate( [ { $unwind : "friends" } ] )
-    friendsData.forEach((entry) => {
-        print(entry)
+    db.users.aggregate( [ { $unwind : "$friends" } ] ).forEach((entry) => {
         db.flat_users.insert({"user_id":entry.user_id, "friends":entry.friends})
 
     })

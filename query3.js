@@ -10,6 +10,10 @@ function cities_table(dbname) {
     db = db.getSiblingDB(dbname);
 
     // TODO: implement cities collection here
+    db.createCollection("cities")
+    db.users.aggregate([{$group: { _id: "$current.city",users: {$push : "$user_id"}}}]).forEach((elem) => {
+        db.cities.insert(elem)
+    })
 
     return;
 }
